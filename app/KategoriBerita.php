@@ -13,8 +13,8 @@ class KategoriBerita extends Model
         'nama','users_id'
     ];
 
-    public function artikels(){
-        return $this->hasMany(\App\Artikel::class,'kategori_artikel_id','id');
+    public function beritas(){
+        return $this->hasMany(\App\Berita::class,'kategori_berita_id','id');
     }
 
     public function user(){

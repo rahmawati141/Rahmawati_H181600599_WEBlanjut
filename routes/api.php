@@ -29,40 +29,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Soal1
 //Tampilkan kategori berita dengan id=40 dan dibuat oleh orang dengan email ntarihoran@siregar.org
-Route::get('soal1','BabSatuController@a1');
+Route::get('soal1','BabSatuController@a1')->name('soal1');
 
 //Soal2
-//Tampilkan Artikel dengan id = 2 atau id =5
+//Tampilkan Kategori Berita dari berita yang ditulis oleh orang dengan email yang diakhiri @wulandari.in
 Route::get('soal2','BabSatuController@a2');
 
 //Soal3
-//Tampilkan artikel dengan id =3 dan user dengan nama =Aslijan Megantara
+//Tampilkan Pengumuman yang ditulis oleh orang yang membuat kategori artikel id = 5 atau membuat kategori artikel id = 20 , sertakan user pembuat pengumumannya
 Route::post('soal3','BabSatuController@a3');
 
 //Soal4
-//Tampilkan pengumuman yang dibuat oleh user yang membuat galeri dengan galeri id=269
-Route::post('soal4','BabSatuController@a4');
+//Tampilkan berita yang dibuat oleh user yang membuat pengumuman, artikel, galeri dan kategori_artikel
+Route::post('soal4','BabDuaController@a4');
 
 //Soal5
-//Tampilkan pengumuman yang dibuat oleh user yang membuat galeri dengan dengan nama kategori galeri yang diawali dengan Aut
-Route::put('soal5','BabDuaController@a5');
-
-//Soal6
-//Tampilkan pengumuman yang dibuat oleh user yang membuat galeri dan juga membuat berita
-Route::patch('soal6','BabDuaController@a6');
-
-//Soal7
-//Tampilkan pengumuman yang dibuat oleh user yang membuat berita dan juga membuat artikel
-Route::delete('soal7','BabDuaController@a7');
-
-//Soal8
-//Tampilkan user yang membuat berita, artikel, pengumuman dan galeri, beserta berita artikel pengumuman dan galerinya.
-Route::post('soal8','BabDuaController@a8');
-
-//Soal9
-//Tampilkan jumlah user yang membuat artikel dan pengumuman tapi tidak pernah membuat berita.
-Route::put('soal9','BabDuaController@a9');
-
-//Soal10
 //Tampilkan artikel yang dibuat oleh user yang membuat galeri dengan nama kategori galeri yang di akhiri dengan et.
-Route::delete('soal10','BabDuaController@a10');
+Route::put('soal5','BabDuaController@a5');
