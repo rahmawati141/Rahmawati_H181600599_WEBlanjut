@@ -93,4 +93,23 @@ class ArtikelAPIController extends Controller
 
         return response()->json(['message'=>'data telah dihapus']);
     }
+
+    //Soal 1.
+    //Tampilkan Artikel yang dibuat oleh User dengan id 20
+    // dan Kategori artikel id 12
+    public function artikelUjiFunction(){
+        $artikels=Artikel::where('users_id',20)->where('kategori_artikel_id',16)->get();
+        return $artikels;
+    }
+
+    //Tampilkan Artikel yang di tulisa oleh orang yang membuat berita dengan id=10
+    public function artikelSoal2(){
+        $artikels=Artikel::whereHas('user',function ($query){
+            $query->whereHas('beritas',function ($query){
+                $query->where('id',10);
+            });
+        })->with('user','user.beritas')->get();
+
+        return $artikels;
+    }
 }
